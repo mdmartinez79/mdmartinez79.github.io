@@ -1,0 +1,87 @@
+/* ========== INDEX ========== */
+
+/* ----- INIT ----- */
+
+a {
+    text-decoration: none;
+}
+
+.portada .col-12, .row, .container-fluid {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+.borde {    
+    width: 95%;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.171);
+}
+
+/* ----- HEADER ----- */
+
+header a {
+    text-decoration: none;
+}
+
+header .item {    
+    color: gray;
+    font-size: 0.9em;
+}
+
+/* ----- PORTADA ----- */
+
+.portada {
+    height: 100vh;
+}
+
+.portada img {
+    height: 100vh;
+    object-fit: cover;
+    filter: brightness(50%);
+}
+
+.portada-text {
+    z-index: 5;
+}
+
+.portada-text h1 {
+    font-size: 5em;
+}
+
+.portada-text h2 {
+    font-size: 3em;
+    font-family: 'Bad Script', cursive;
+}
+
+/* ----- MAIN ----- */
+
+.card {
+    width: 250px;
+}
+
+.card .image__box {
+    overflow: hidden;
+}
+
+.card img {
+    object-fit: cover;
+}
+
+/* ========== ARTICULO ========== */
+
+/* ----- MAIN ----- */
+
+article .carousel-inner {
+    border-radius: 25px;
+}
+
+.info__product h6, .info__product p{
+    font-size: 0.8em;
+}
+
+.info__product h6 {
+    font-weight: 600;
+}

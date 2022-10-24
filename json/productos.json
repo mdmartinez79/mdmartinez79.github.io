@@ -1,0 +1,153 @@
+[
+    {
+        "tipo": "TECLADOS",
+        "productos": [
+            {
+                "id": 1,
+                "tipo": "TECLADO",
+                "marca": "HYPERX",
+                "modelo": "Red",
+                "detalle": 102,
+                "color": "NEGRO",
+                "precio": 5000,
+                "img": "./images/productos/tecladohyperx.jpg"
+            },
+            {
+                "id": 2,
+                "tipo": "TECLADO",
+                "marca": "REDDRAGON",
+                "modelo": "Green",
+                "detalle": 102,
+                "color": "BLANCO",
+                "precio": 5200,
+                "img": "./images/productos/reddragonblanco.jpg"
+            },
+            {
+                "id": 3,
+                "tipo": "TECLADO",
+                "marca": "Inalambrico",
+                "modelo": "WIRELESS",
+                "detalle": 102,
+                "color": "BLANCO",
+                "precio": 5700,
+                "img": "./images/productos/tecladoblue.jpg"
+            },
+            {
+                "id": 4,
+                "tipo": "TECLADO",
+                "marca": "REDDRAGON",
+                "modelo": "RGB 60%",
+                "detalle": 60,
+                "color": "NEGRO",
+                "precio": 5900,
+                "img": "./images/productos/tecladoreddragonnegro.jpg"
+            }
+        ]
+    },
+    {
+        "tipo": "IMPRESORAS",
+        "productos": [
+            {
+                "id": 5,
+                "tipo": "IMPRESORA",
+                "marca": "HP",
+                "modelo": "MULTIFUNCION TINTA",
+                "detalle": 3,
+                "color": "NEGRO",
+                "precio": 14700,
+                "img": "./images/productos/impresorahp.jpg"
+            },
+            {
+                "id": 6,
+                "tipo": "IMPRESORA",
+                "marca": "EPSON",
+                "modelo": "MULTIFUNCION TINTA",
+                "detalle": 4,
+                "color": "NEGRO",
+                "precio": 15100,
+                "img": "./images/productos/epson.jpg"
+            },
+            {
+                "id": 7,
+                "tipo": "IMPRESORA",
+                "marca": "LEXMARK",
+                "modelo": "TONER COLOR",
+                "detalle": 40,
+                "color": "NEGRO",
+                "precio": 19200,
+                "img": "./images/productos/impresora-laser-lexmark-ms417dn.jpg"
+            }
+        ]
+    },
+    {
+        "tipo": "AURICULARES",
+        "productos": [
+            {
+                "id": 8,
+                "tipo": "AURICULAR",
+                "marca": "REDDRAGON",
+                "modelo": "WIRELESS",
+                "detalle": 35,
+                "color": "BLANCO",
+                "precio": 6500,
+                "img": "./images/productos/auricularblancored.jpg"
+            },
+            {
+                "id": 9,
+                "tipo": "AURICULAR",
+                "marca": "REDDRAGON",
+                "modelo": "WIRELESS",
+                "detalle": 40,
+                "color": "NEGRO",
+                "precio": 5900,
+                "img": "./images/productos/auricularreddragonnegro.jpg"
+            },
+            {
+                "id": 10,
+                "tipo": "AURICULAR",
+                "marca": "HYPERX",
+                "modelo": "BLUETOOH",
+                "detalle": 2,
+                "color": "NEGRO",
+                "precio": 6900,
+                "img": "./images/productos/auricularhyperx.jpg"
+            }
+        ]
+    },
+    {
+        "tipo": "MONITORES",
+        "productos": [
+            {
+                "id": 11,
+                "tipo": "MONITOR",
+                "marca": "LG",
+                "modelo": "WIDESCREEN",
+                "detalle": 24,
+                "color": "NEGRO",
+                "precio": 23200,
+                "img": "./images/productos/monitor-led-238-lg-24mk430h-1920x1080-hdmi-vga-5ms75hzfreesync.jpg"
+            },
+            {
+                "id": 12,
+                "tipo": "MONITOR",
+                "marca": "SAMSUNG",
+                "modelo": "CURVO",
+                "detalle": 40,
+                "color": "NEGRO",
+                "precio": 45000,
+                "img": "./images/productos/samsungcurvo.jpg"
+            },
+            {
+                "id": 13,
+                "tipo": "MONITOR",
+                "marca": "VIEWSONIC",
+                "modelo": "WIDESCREEN",
+                "detalle": 26,
+                "color": "NEGRO",
+                "precio": 26000,
+                "img": "./images/productos/monitorview.jpg"
+            }
+        ]
+    }
+]
+

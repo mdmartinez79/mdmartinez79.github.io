@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAMER PC</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/estilos.css">
+</head>
+<body onload="mostrarColeccion(), mostrarCategorias()">
+
+    <div class="container">
+
+        <header class="row fixed-top bg-white">
+            <nav class="navbar navbar-expand-lg navbar-light justify-content-center">
+                <div class="container-fluid  col-lg-10">
+                    <div class="d-flex align-items-center">     
+                        <a class="navbar-brand fs-4 fw-bold" href="./index.html">GAMER PC
+                            
+                        </a>
+                    </div>                        
+                    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>  
+                    
+                    <div class="w-100 ">
+                        <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup">
+                            <ul class="navbar-nav">
+                                <a class="nav-link ps-lg-4 pe-lg-4" href="#coleccion">Productos</a>
+                                <a class="nav-link ps-lg-4 pe-lg-4" href="#categorias">Categorías</a>
+                                <a class="nav-link ps-lg-4 pe-lg-4" href="#contact_box">Contacto</a>
+                            </ul>
+                            <button class="bg-primary col-12 col-lg-1 pt-2 pb-2 border-0 text-center rounded" data-bs-toggle="modal" data-bs-target="#exampleModalLong">
+                                <i class="fa-solid fa-cart-shopping text-light"></i>   
+                            </button>
+                        </div>      
+                    </div>
+                </div>
+            </nav>   
+            <div class="row d-flex justify-content-center">
+                <div class="col-12 borde"></div>
+            </div>        
+        </header>
+
+    </div>
+
+    <div class="modal fade" id="exampleModalLong" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Carrito de compras</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container table-responsive">
+
+                            <form action="" id="form_compra">
+                                <fieldset>
+                                    <legend class="fs-6">Para que te podamos enviar el formulario de pago y envío completá estos campos</legend>
+                                    <div class="mb-2">
+                                        <input type="text" class="form-control"
+                                            id="nombreCompra" placeholder="Nombre">
+                                    </div>
+                                    <div class="mb-2">
+                                        <input type="email"
+                                            class="form-control" id="emailCompra"
+                                            placeholder="Correo electrónico">
+                                    </div>
+                                </fieldset>
+                            </form>     
+
+                            <table class="table">
+                            <thead>
+                                <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Item</th>
+                                <th scope="col">Color</th>
+                                <td></td>  
+                                <th scope="col">Cantidad</th>
+                                <th scope="col">Acción</th>
+                                <th scope="col">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody id="items"></tbody>
+                            <tfoot>
+                                <tr id="footer">
+                                <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
+                                </tr>
+                            </tfoot>
+                            </table>
+                        
+
+                            <template id="listado-carrito">
+                                <tr>
+                                <th scope="row">id</th>
+                                <td>Item</td>
+                                <td>Color</td>
+                                <td></td> 
+                                <td>Quantity</td>
+                                          
+                                <td>
+                                    <button class="btn btn-info btn-sm">
+                                        +
+                                    </button>
+                                    <button class="btn btn-danger btn-sm">
+                                        -
+                                    </button>
+                                </td>
+                                <td>$ <span>500</span></td>
+                               
+                                </tr>
+                            </template>
+
+                            <template id="detalle-footer">
+                                <th scope="row" colspan="4" class="bg-warning">Total productos</th>
+                                <td class="bg-warning">Cantidad Total</td>
+                                <td class="bg-warning">
+                                    <button class="btn btn-danger btn-sm" id="vaciar-carrito">
+                                        vaciar todo
+                                    </button>
+                                </td>
+                                <td class="font-weight-bold bg-warning">$ <span>Total precio</span></td>
+                            </template>
+                        </div>
+                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success" onclick="validarCompra()">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <main class="row align-items-center justify-content-center p-3">
+
+        <div class="col-10 p-0 mt-3 mb-3" id="coleccion">
+            <div class="row">
+              
+                <div class="row d-flex justify-content-center">
+                    <div class="col-12 borde mb-4"></div>
+                </div>
+                <div class="d-flex gap-4 align-items-center flex-column align-items-lg-start justify-content-evenly flex-lg-row flex-wrap
+                  p-3"
+                 id="coleccion-item">
+                    <!-- nuevos artículos cargados desde JS -->
+                </div>
+            </div>
+        </div>
+
+        <div class="col-10 p-0 mt-3 mb-3" id="categorias">
+            <div class="row">
+                <h2 class="text-center col-12 p-2">NUESTROS TIPOS DE ACCESORIOS</h2>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-12 borde mb-4"></div>
+                </div>
+                <div class="d-flex gap-1 align-items-center flex-column align-items-lg-start justify-content-evenly flex-lg-row flex-wrap"
+                 id="categorias-item">
+                    <!-- categorías cargadas desde JS -->
+                </div>
+            </div>
+        </div>
+
+        <div class="col-10 p-0 mt-3 mb-3" id="productos">
+            <div class="row">
+                <div class="d-flex gap-1 align-items-center flex-column align-items-lg-start justify-content-evenly flex-lg-row flex-wrap"
+                 id="productos-item">
+                    <!-- PRODUCTOS -->
+                </div>
+            </div>
+        </div>
+
+        
+
+    </main>
+    
+    <div class="container-fluid">
+        <section id="contact_box">
+            <div class="row d-flex justify-content-center">
+                <div class="col-12 borde"></div>
+            </div>
+            <div class="row d-flex justify-content-center m-4 bg-dark text-white rounded">                
+                <div class=" col-12 col-lg-6 p-2">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3278.2195698464957!2d-58.2583613847089!3d-34
+                    .75006137276309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a32f80c3146065%3A0xce2b43ce635d7cf4!2zUHJv
+                    4oCiVGVjaA!5e0!3m2!1ses-419!2sar!4v1651753165560!5m2!1ses-419!2sar" width="100%" height="100%" style="border:0;" 
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>                                                                        
+                </div>
+                <div class=" col-12 col-lg-6 p-2 d-flex justify-content-center align-items-center text-center">
+                    <div class="row">
+                        
+                        <div
+                            class="col-12 d-flex flex-column justify-content-center align-items-center gap-2">
+                            <span class="d-flex gap-2 align-items-center"><i
+                                    class="fa-solid fa-clock"></i>
+                                <p class="m-0" id="feriados">Lunes a viernes de
+                                    9h a 18h</p>
+                            </span>
+                            <span class="d-flex gap-2 align-items-center"><i
+                                    class="fa-solid fa-location-dot"></i>
+                                <p class="m-0">Avenida Siempre Viva 123,
+                                    Springfield.</p>
+                            </span>
+                            <h5>¡Te esperamos!</h5>
+                        </div>
+                        
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12 fs-4">
+                                    <a href="#"><i
+                                            class="fa-brands fa-whatsapp"></i></a>
+                                    <a href="#"><i
+                                            class="fa-brands fa-facebook"></i></a>
+                                    <a href="#"><i
+                                            class="fa-brands fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                     
+                        <div class="col-12">
+                            <div class="modal text-dark" tabindex="-1" id="modalForm">
+                                <div class="modal-dialog">
+                                    <div class="modal-content bg-warning">
+                                        <div class="modal-header">
+                                            <h5>Contactate con nosotros</h5>
+                                            <button type="button" class="btn-close"
+                                                data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form id="form">
+                                                <div class="mb-2">
+                                                    <input type="text" class="form-control"
+                                                        id="nombre" placeholder="Nombre" required>
+                                                </div>
+                                                <div class="mb-2">
+                                                    <input type="email"
+                                                        required
+                                                        class="form-control" id="email"
+                                                        placeholder="Correo electrónico*">
+                                                </div>
+                                                <div class="mb-2">
+                                                    <input type="text"
+                                                        required
+                                                        class="form-control" id="asunto"
+                                                        placeholder="Asunto*">
+                                                </div>
+                                                <div class="mb-2">
+                                                    <label for="textArea"
+                                                        class="form-label">¡Dejanos tu
+                                                        consulta!</label>
+                                                    <textarea class="form-control"
+                                                        id="textArea" rows="3" required></textarea>
+                                                </div>
+                                                <button name="enviar" type="submit"
+                                                    class="btn btn-danger"
+                                                    value="Enviar">Enviar</button>
+                                                <button name="borrar" type="reset"
+                                                    class="btn btn-secondary"
+                                                    value="Borrar">Borrar</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-danger" id="btnContacto"
+                                data-bs-toggle="modal" data-bs-target="#modalForm"">CONTACTO</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    
+
+</div>    
+
+<footer class="row container-fluid p-0 m-0">
+    <div class="col-12 bg-success text-light text-center">
+        GAMERPC | Todos los derechos reservados ©
+    </div>
+
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://kit.fontawesome.com/c926e0f0fa.js" crossorigin="anonymous"></script>
+
+    <script src="./js/database.js"></script>
+    <script src="./js/dom.js"></script>
+    <script src="./js/carrito.js"></script>
+</body>
+</html>
